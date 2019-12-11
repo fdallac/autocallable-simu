@@ -221,8 +221,8 @@ def distribuitedMonteCarloPrice(inputParameter, flagParameter, t_steps, TtM, Dri
             outputSum.add(_payoff(t_steps, TtM, Drift, Vol, Disc, _spot, S_k, S_p, N, I))
     elif flagParameter == 'R':
         def sparkCustomizedPayoff(_input):
-            _interest = I * _input
-            outputSum.add(_payoff(t_steps, TtM, Drift, Vol, Disc, S_0, S_k, S_p, N, _interest))
+            _drift = Drift * _input
+            outputSum.add(_payoff(t_steps, TtM, _drift, Vol, Disc, S_0, S_k, S_p, N, I))
     else:
         return 0
 

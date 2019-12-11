@@ -116,7 +116,7 @@ fig2, ax21, ax22 = grk.plot(delta, spot_mid, priceForDelta, spot, 'DELTA', 'PRIC
 ## RHO :
 print('\n\nSIMULATING RHO...\n')
 starting_time = time.time()
-vol_param = np.arange(0, 5, 0.5)
+vol_param = np.arange(-5, 5, 1)
 
 # simulate range of prices
 priceForRho, inR = grk.computePricesForGreek('R', t_steps, k_TtM, k_Drift, k_Vol, DsR, S_0, S_k, S_p, N, I, vol_param, n_simu, sc)
@@ -126,7 +126,7 @@ rho, inR_mid = grk.derivateGreek(priceForRho, inR)
 print('\nElapsed time =', time.time() - starting_time, 's')
 # plot delta
 fig3, ax31, ax32 = grk.plot(rho, inR_mid, priceForRho, inR, 'RHO', 'PRICE', 'INTEREST RATE')
-ax32.set_ylim([0.2, 0.8]) # correction for the 'rho' ax
+# ax32.set_ylim([0.2, 0.8]) # correction for the 'rho' ax
 
 
 ## GAMMA :

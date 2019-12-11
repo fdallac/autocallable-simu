@@ -35,7 +35,7 @@ def computePricesForGreek(greekFlag, t_steps, TtM, Drift, Vol, DsR, S_0, S_k, S_
         elif greekFlag == 'D':
             denoms.append(S_0 * param)
         elif greekFlag == 'R':
-            denoms.append(I * param)
+            denoms.append(Drift.mean() * param)
         else:
             print('ERROR')
             return 0, 0
