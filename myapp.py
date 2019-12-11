@@ -18,7 +18,7 @@ import mygreeks as grk
 print('\nINPUT AND PARAMETERS ESTIMATION...\n')
 
 # parameters
-n_simu = int(10e5)
+n_simu = int(1e6) # 10^6 simu
 
 # data
 N = 1 # NOMINAL
