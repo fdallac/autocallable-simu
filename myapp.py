@@ -133,12 +133,12 @@ fig3, ax31, ax32 = grk.plot(rho, inR_mid, priceForRho, inR, 'RHO', 'PRICE', 'INT
 print('\n\nSIMULATING GAMMA...\n')
 starting_time = time.time()
 # compute discrete derivatives
-# (gamma is the second derivative of price over volatility, i.e. the first derivative of delta)
-gamma, vol_midmid = grk.derivateGreek(delta, vol_mid)
+# (gamma is the second derivative of price over the spot price, i.e. the first derivative of delta)
+gamma, spot_midmid = grk.derivateGreek(delta, spot_mid)
 # debug
 print('Elapsed time =', time.time() - starting_time, 's')
 # plot gamma
-fig4, ax41, ax42 = grk.plot(gamma, vol_midmid, priceForDelta, vol, 'GAMMA', 'PRICE', 'VOLATILITY')
+fig4, ax41, ax42 = grk.plot(gamma, spot_midmid, priceForDelta, vol, 'GAMMA', 'PRICE', 'SPOT PRICE')
 
 # show plots
 plt.show() 
