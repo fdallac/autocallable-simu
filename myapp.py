@@ -138,7 +138,7 @@ gamma, spot_midmid = grk.derivateGreek(delta, spot_mid)
 # debug
 print('Elapsed time =', time.time() - starting_time, 's')
 # plot gamma
-fig4, ax41, ax42 = grk.plot(gamma, spot_midmid, priceForDelta, vol, 'GAMMA', 'PRICE', 'SPOT PRICE')
+fig4, ax41, ax42 = grk.plot(gamma, spot_midmid, priceForDelta, spot, 'GAMMA', 'PRICE', 'SPOT PRICE')
 
 # show plots
 plt.show() 
